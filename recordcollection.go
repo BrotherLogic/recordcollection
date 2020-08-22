@@ -427,6 +427,7 @@ func Init() *Server {
 		GoServer:     &goserver.GoServer{},
 		updateFanout: make(chan int32, 100),
 		fanoutServers: []string{
+			"digitalwantlist",
 			"recordalerting",
 			"cdprocessor",
 			"recordbudget",
