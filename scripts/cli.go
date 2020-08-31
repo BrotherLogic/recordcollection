@@ -53,8 +53,11 @@ func main() {
 				}
 			}
 
-			if r.GetRecord().GetMetadata().GetGoalFolder() == 466902 {
+			if r.GetRecord().GetMetadata().GetGoalFolder() == 1433217 || r.GetRecord().GetMetadata().GetGoalFolder() == 268147 {
 				fmt.Printf("%v. %v -> %v\n", i, r.GetRecord().GetRelease().GetTitle(), r.GetRecord().GetMetadata().GetSpineWidth())
+				_, err := registry.DeleteRecord(ctx, &pbrc.DeleteRecordRequest{InstanceId: id})
+				fmt.Printf("Deleted: %v\n", err)
+				time.Sleep(time.Second)
 			}
 		}
 
